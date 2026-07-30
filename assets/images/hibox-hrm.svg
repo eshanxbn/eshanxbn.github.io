@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-hrm" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="50%" stop-color="#311b92"/>
+      <stop offset="100%" stop-color="#4527a0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg-hrm)"/>
+  <rect x="80" y="60" width="640" height="380" rx="16" fill="#090d16" stroke="rgba(139,92,246,0.3)" stroke-width="2"/>
+  <rect x="80" y="60" width="640" height="40" rx="16" fill="#111827"/>
+  <circle cx="110" cy="80" r="6" fill="#ef4444"/>
+  <circle cx="130" cy="80" r="6" fill="#f59e0b"/>
+  <circle cx="150" cy="80" r="6" fill="#10b981"/>
+  <text x="400" y="85" fill="#a78bfa" font-family="sans-serif" font-size="14" text-anchor="middle">Hibox HRM — Enterprise HR & Payroll Suite</text>
+  
+  <rect x="110" y="120" width="260" height="280" rx="10" fill="#1e1b4b" stroke="rgba(167,139,250,0.2)"/>
+  <text x="130" y="155" fill="#f3e8ff" font-family="sans-serif" font-size="16" font-weight="bold">Employee Directory</text>
+  <rect x="130" y="175" width="220" height="40" rx="6" fill="#312e81"/>
+  <rect x="130" y="225" width="220" height="40" rx="6" fill="#312e81"/>
+  <rect x="130" y="275" width="220" height="40" rx="6" fill="#312e81"/>
+  <rect x="130" y="325" width="220" height="40" rx="6" fill="#312e81"/>
+
+  <rect x="390" y="120" width="310" height="280" rx="10" fill="#0f172a" stroke="rgba(255,255,255,0.08)"/>
+  <text x="410" y="155" fill="#f3e8ff" font-family="sans-serif" font-size="16" font-weight="bold">Automated Payroll System</text>
+  <rect x="410" y="175" width="270" height="150" rx="8" fill="#1e293b"/>
+  <text x="430" y="210" fill="#a78bfa" font-family="sans-serif" font-size="14">Monthly Payroll Processed</text>
+  <text x="430" y="245" fill="#34d399" font-family="sans-serif" font-size="28" font-weight="bold">$1.85M USD</text>
+  <text x="430" y="280" fill="#9ca3af" font-family="sans-serif" font-size="12">100% Tax & Compliance Automated</text>
+</svg>

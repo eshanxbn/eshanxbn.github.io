@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MD. Eshan — Senior Software Engineer | Portfolio</title>
+
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="Portfolio of MD. Eshan, a Senior Software Engineer specializing in Laravel, Next.js, High-Performance APIs, Cloud Architecture, Docker, and Scalable SaaS Applications.">
+  <meta name="keywords" content="MD Eshan, Software Engineer, Full Stack Developer, Laravel, Next.js, API Architecture, DevOps, Docker, AWS, React, Vue, PHP, Portfolio">
+  <meta name="author" content="MD. Eshan">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mdeshan.dev/">
+
+  <!-- OpenGraph Tags -->
+  <meta property="og:title" content="MD. Eshan — Senior Software Engineer">
+  <meta property="og:description" content="Building scalable SaaS products, high-performance APIs, cloud-native applications, and modern web experiences.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mdeshan.dev/">
+  <meta property="og:image" content="assets/images/qa-brains.svg">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MD. Eshan — Senior Software Engineer">
+  <meta name="twitter:description" content="Building scalable SaaS products, high-performance APIs, cloud-native applications, and modern web experiences.">
+  <meta name="twitter:image" content="assets/images/qa-brains.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- Tailwind CSS CDN with Custom Config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              indigo: '#4F46E5',
+              cyan: '#22D3EE',
+              violet: '#8B5CF6',
+              darkBg: '#030712',
+              cardBg: '#0B0F19'
+            }
+          },
+          fontFamily: {
+            heading: ['Space Grotesk', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS Animations & System Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "MD. Eshan",
+    "jobTitle": "Software Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Riseup Labs"
+    },
+    "url": "https://mdeshan.dev",
+    "sameAs": [
+      "https://github.com",
+      "https://linkedin.com"
+    ],
+    "knowsAbout": ["Software Engineering", "Laravel", "Next.js", "REST APIs", "AWS", "Docker", "SaaS"]
+  }
+  </script>
+</head>
+<body class="bg-[#030712] text-gray-100 selection:bg-cyan-500 selection:text-black relative font-body antialiased">
+
+  <!-- 1. PRELOADER -->
+  <div id="preloader" class="fixed inset-0 z-[10000] bg-[#030712] flex flex-col items-center justify-center transition-opacity duration-500">
+    <div class="relative flex items-center justify-center">
+      <div class="w-24 h-24 rounded-full border-2 border-indigo-500/20 border-t-cyan-400 animate-spin"></div>
+      <span class="absolute font-mono text-xl font-bold text-cyan-400" id="preloader-count">0%</span>
+    </div>
+    <p class="mt-6 font-mono text-sm tracking-widest text-gray-400 uppercase">Loading Experience...</p>
+  </div>
+
+  <!-- 2. SCROLL PROGRESS BAR -->
+  <div class="fixed top-0 left-0 right-0 h-1 z-[9999] bg-gray-900">
+    <div id="scroll-progress" class="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400 w-0 transition-all duration-150"></div>
+  </div>
+
+  <!-- 3. CUSTOM CURSOR & SPOTLIGHT -->
+  <div id="custom-cursor" class="hidden md:block"></div>
+  <div id="cursor-spotlight" class="hidden md:block"></div>
+
+  <!-- 4. STICKY GLASS NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-cyan-500 flex items-center justify-center font-heading font-bold text-white shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+          E
+        </div>
+        <div class="flex flex-col">
+          <span class="font-heading font-bold text-lg text-white group-hover:text-cyan-400 transition-colors">MD. ESHAN</span>
+          <span class="text-[10px] font-mono text-gray-400 tracking-wider">SOFTWARE ENGINEER</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#about" class="nav-link text-gray-300 hover:text-cyan-400 transition-colors">About</a>
+        <a href="#experience" class="nav-link text-gray-300 hover:text-cyan-400 transition-colors">Experience</a>
+        <a href="#projects" class="nav-link text-gray-300 hover:text-cyan-400 transition-colors">Projects</a>
+        <a href="#skills" class="nav-link text-gray-300 hover:text-cyan-400 transition-colors">Skills</a>
+        <a href="#achievements" class="nav-link text-gray-300 hover:text-cyan-400 transition-colors">Metrics</a>
+        <a href="#contact" class="nav-link text-gray-300 hover:text-cyan-400 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Action Buttons & Controls -->
+      <div class="flex items-center gap-4">
+        <!-- Ctrl + K Button -->
+        <button class="open-cmd-palette hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-800/80 border border-gray-700/60 text-xs text-gray-400 hover:text-white hover:border-cyan-400/50 transition-all">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <span>Search</span>
+          <kbd class="px-1.5 py-0.5 text-[10px] font-mono bg-gray-900 text-gray-300 rounded border border-gray-700">Ctrl K</kbd>
+        </button>
+
+        <!-- Theme Switcher Toggle -->
+        <button class="theme-toggle-btn p-2 rounded-xl bg-gray-800/60 border border-gray-700/50 text-gray-300 hover:text-cyan-400 hover:border-cyan-400/40 transition-all" aria-label="Toggle theme">
+          <svg class="sun-icon w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg class="moon-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+
+        <!-- Resume Download CTA -->
+        <button class="download-resume-btn hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-700 text-white font-medium text-sm hover:shadow-lg hover:shadow-indigo-500/30 transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>CV</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="relative z-10 pt-20">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-[92vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 overflow-hidden bg-grid-pattern bg-radial-gradient">
+      
+      <!-- Background Ambient Glow Blobs -->
+      <div class="absolute top-1/4 left-10 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl animate-float-slow pointer-events-none"></div>
+      <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl animate-float-fast pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Text & CTA -->
+        <div class="lg:col-span-7 flex flex-col items-start reveal-on-scroll">
+          
+          <!-- Availability Badge -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-indigo-950/60 border border-indigo-500/30 text-cyan-300 text-xs font-mono mb-6 backdrop-blur-md">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span>Available for Senior Engineering Roles & SaaS Consulting</span>
+          </div>
+
+          <!-- Name -->
+          <h1 class="font-heading font-extrabold text-5xl sm:text-6xl xl:text-7xl tracking-tight text-white mb-4">
+            MD. <span class="gradient-text">Eshan</span>
+          </h1>
+
+          <!-- Dynamic Typing Title -->
+          <div class="h-10 sm:h-12 mb-6">
+            <p class="font-mono text-xl sm:text-2xl text-cyan-400 font-semibold flex items-center gap-2">
+              <span id="hero-typing-text">Software Engineer</span>
+              <span class="w-0.5 h-6 bg-cyan-400 animate-pulse"></span>
+            </p>
+          </div>
+
+          <!-- Subtitle -->
+          <p class="text-base sm:text-lg text-gray-300 max-w-2xl leading-relaxed mb-8">
+            Building scalable SaaS products, high-performance APIs, cloud-native applications, and modern web experiences. Over 5+ years of engineering robust backends with <span class="text-white font-medium">Laravel</span>, high-speed frontends with <span class="text-white font-medium">Next.js</span>, and automated <span class="text-white font-medium">Docker/AWS</span> infrastructure.
+          </p>
+
+          <!-- Action CTA Buttons -->
+          <div class="flex flex-wrap items-center gap-4 w-full sm:w-auto">
+            <a href="#projects" class="btn-glow flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-700 to-cyan-600 text-white font-semibold text-sm shadow-xl shadow-indigo-600/30 hover:scale-[1.02] transition-all">
+              <span>View Projects</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+
+            <button class="download-resume-btn flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gray-900/80 border border-gray-700/80 text-gray-200 font-semibold text-sm hover:border-cyan-400 hover:text-cyan-400 hover:bg-gray-800 transition-all backdrop-blur-md">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <span>Download Resume</span>
+            </button>
+
+            <a href="#contact" class="flex items-center justify-center px-6 py-3.5 text-gray-400 hover:text-white font-medium text-sm transition-colors">
+              <span>Get In Touch</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Hero Interactive Code Showcase Widget -->
+        <div class="lg:col-span-5 reveal-on-scroll stagger-2">
+          <div class="code-window p-5 relative overflow-hidden">
+            
+            <!-- Window Top Bar -->
+            <div class="flex items-center justify-between pb-4 border-b border-gray-800 mb-4">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+              </div>
+              
+              <!-- Tab Switchers -->
+              <div class="flex items-center gap-1 bg-gray-900/90 p-1 rounded-lg border border-gray-800">
+                <button class="code-tab-btn px-3 py-1 text-xs font-mono rounded-md bg-indigo-600/30 border border-indigo-500 text-cyan-400 transition-all" data-tab="laravel">
+                  ApiController.php
+                </button>
+                <button class="code-tab-btn px-3 py-1 text-xs font-mono rounded-md text-gray-400 border border-transparent hover:text-white transition-all" data-tab="nextjs">
+                  page.tsx
+                </button>
+                <button class="code-tab-btn px-3 py-1 text-xs font-mono rounded-md text-gray-400 border border-transparent hover:text-white transition-all" data-tab="docker">
+                  docker-compose.yml
+                </button>
+              </div>
+            </div>
+
+            <!-- Code Content Screens -->
+            <div class="font-mono text-xs leading-relaxed">
+              
+              <!-- Laravel snippet -->
+              <div id="code-laravel" class="code-tab-content space-y-1">
+                <p><span class="text-purple-400">namespace</span> App\Http\Controllers\Api;</p>
+                <p class="text-gray-500">// High-Performance Optimized Endpoint</p>
+                <p><span class="text-blue-400">class</span> <span class="text-yellow-300">SaaSPerformanceController</span> <span class="text-purple-400">extends</span> Controller {</p>
+                <p class="pl-4"><span class="text-blue-400">public function</span> <span class="text-green-400">getAnalytics</span>(Request <span class="text-cyan-300">$request</span>) {</p>
+                <p class="pl-8"><span class="text-cyan-300">$cacheKey</span> = <span class="text-amber-300">'metrics_'</span> . <span class="text-cyan-300">$request</span>->user()->id;</p>
+                <p class="pl-8"><span class="text-purple-400">return</span> Redis::<span class="text-green-400">remember</span>(<span class="text-cyan-300">$cacheKey</span>, <span class="text-orange-400">3600</span>, <span class="text-blue-400">function</span>() {</p>
+                <p class="pl-12"><span class="text-purple-400">return</span> Microservice::<span class="text-green-400">aggregateHighThroughputData</span>();</p>
+                <p class="pl-8">});</p>
+                <p class="pl-4">}</p>
+                <p>}</p>
+              </div>
+
+              <!-- Next.js snippet -->
+              <div id="code-nextjs" class="code-tab-content hidden space-y-1">
+                <p><span class="text-purple-400">import</span> { useQuery } <span class="text-purple-400">from</span> <span class="text-amber-300">'@tanstack/react-query'</span>;</p>
+                <p class="text-gray-500">// Next.js Hydration & Server Component</p>
+                <p><span class="text-blue-400">export default function</span> <span class="text-yellow-300">MetricsDashboard</span>() {</p>
+                <p class="pl-4"><span class="text-purple-400">const</span> { data, isLoading } = <span class="text-green-400">useQuery</span>({</p>
+                <p class="pl-8">queryKey: [<span class="text-amber-300">'system-telemetry'</span>],</p>
+                <p class="pl-8">queryFn: () => <span class="text-green-400">fetchApiEndpoint</span>(<span class="text-amber-300">'/v1/metrics'</span>)</p>
+                <p class="pl-4">});</p>
+                <p class="pl-4"><span class="text-purple-400">return</span> &lt;<span class="text-cyan-300">DashboardGrid</span> data={data} /&gt;;</p>
+                <p>}</p>
+              </div>
+
+              <!-- Docker snippet -->
+              <div id="code-docker" class="code-tab-content hidden space-y-1">
+                <p><span class="text-blue-400">version:</span> <span class="text-amber-300">'3.8'</span></p>
+                <p><span class="text-blue-400">services:</span></p>
+                <p class="pl-4"><span class="text-yellow-300">api-backend:</span></p>
+                <p class="pl-8"><span class="text-purple-400">build:</span> .</p>
+                <p class="pl-8"><span class="text-purple-400">ports:</span> [<span class="text-amber-300">"8000:8000"</span>]</p>
+                <p class="pl-8"><span class="text-purple-400">environment:</span></p>
+                <p class="pl-12">- <span class="text-cyan-300">REDIS_HOST=redis</span></p>
+                <p class="pl-12">- <span class="text-cyan-300">DB_HOST=postgres</span></p>
+                <p class="pl-4"><span class="text-yellow-300">redis:</span></p>
+                <p class="pl-8"><span class="text-purple-400">image:</span> redis:7-alpine</p>
+              </div>
+
+            </div>
+
+            <!-- Footer Badge -->
+            <div class="mt-4 pt-3 border-t border-gray-800/80 flex items-center justify-between text-[11px] text-gray-500 font-mono">
+              <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-400"></span> Clean Architecture (SOLID)</span>
+              <span>100% Production Ready</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
+        <span class="text-[10px] font-mono tracking-widest text-gray-400 uppercase">Scroll Down</span>
+        <div class="w-5 h-8 rounded-full border-2 border-gray-600 flex justify-center p-1">
+          <div class="w-1 h-2 bg-cyan-400 rounded-full animate-bounce"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+        <h2 class="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-3">// ABOUT ME</h2>
+        <h3 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+          Architecting High-Throughput Systems with Precision & Purpose
+        </h3>
+      </div>
+
+      <!-- Key Summary & Core Philosophy -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-16">
+        
+        <!-- Main Description Glass Card -->
+        <div class="lg:col-span-8 glass-card p-8 sm:p-10 rounded-2xl flex flex-col justify-between reveal-on-scroll">
+          <div>
+            <h4 class="font-heading text-2xl font-bold text-white mb-4">Engineering Philosophy</h4>
+            <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-6">
+              I am a passionate <span class="text-cyan-400 font-semibold">Software Engineer</span> with over <span class="text-white font-bold">5+ years of hands-on experience</span> designing and deploying mission-critical web platforms, microservices, multi-tenant SaaS applications, and high-concurrency APIs.
+            </p>
+            <p class="text-gray-400 text-sm sm:text-base leading-relaxed mb-6">
+              Currently serving as <span class="text-white font-semibold">Software Engineer at Riseup Labs</span>, I focus heavily on requirement analysis, core system architecture, REST API design, database schema optimization, Redis caching strategies, and automated production deployments.
+            </p>
+            <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
+              Prior to Riseup Labs, I built complex SaaS marketplaces and financial suites at <span class="text-white font-semibold">Gain Solutions Ltd</span> and engineered secure backend architectures at <span class="text-white font-semibold">Webtech</span>.
+            </p>
+          </div>
+
+          <!-- Highlight Core Pillars -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 mt-8 border-t border-gray-800">
+            <div class="p-3 rounded-xl bg-indigo-950/40 border border-indigo-500/20 text-center">
+              <span class="block font-heading font-bold text-lg text-white">Laravel</span>
+              <span class="text-xs text-gray-400">Backend Mastery</span>
+            </div>
+            <div class="p-3 rounded-xl bg-cyan-950/40 border border-cyan-500/20 text-center">
+              <span class="block font-heading font-bold text-lg text-white">Next.js</span>
+              <span class="text-xs text-gray-400">Modern Frontend</span>
+            </div>
+            <div class="p-3 rounded-xl bg-purple-950/40 border border-purple-500/20 text-center">
+              <span class="block font-heading font-bold text-lg text-white">Docker</span>
+              <span class="text-xs text-gray-400">Containerized Infra</span>
+            </div>
+            <div class="p-3 rounded-xl bg-emerald-950/40 border border-emerald-500/20 text-center">
+              <span class="block font-heading font-bold text-lg text-white">AWS</span>
+              <span class="text-xs text-gray-400">Cloud Scalability</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Highlight Metric Cards Sidebar -->
+        <div class="lg:col-span-4 grid grid-cols-2 gap-4 reveal-on-scroll stagger-2">
+          
+          <div class="glass-card p-6 rounded-2xl flex flex-col justify-center items-center text-center">
+            <span class="counter-val font-heading font-extrabold text-4xl text-cyan-400 mb-2" data-target="5" data-suffix="+">0</span>
+            <span class="text-xs font-mono text-gray-400 uppercase tracking-wider">Years Experience</span>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl flex flex-col justify-center items-center text-center">
+            <span class="counter-val font-heading font-extrabold text-4xl text-indigo-400 mb-2" data-target="20" data-suffix="+">0</span>
+            <span class="text-xs font-mono text-gray-400 uppercase tracking-wider">Projects Built</span>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl flex flex-col justify-center items-center text-center">
+            <span class="counter-val font-heading font-extrabold text-4xl text-purple-400 mb-2" data-target="100" data-suffix="%">0</span>
+            <span class="text-xs font-mono text-gray-400 uppercase tracking-wider">Client Satisfaction</span>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl flex flex-col justify-center items-center text-center">
+            <span class="counter-val font-heading font-extrabold text-4xl text-emerald-400 mb-2" data-target="10" data-suffix="M+">0</span>
+            <span class="text-xs font-mono text-gray-400 uppercase tracking-wider">API Requests</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- EXPERIENCE SECTION (Vertical Interactive Timeline) -->
+    <section id="experience" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+      
+      <div class="text-center max-w-3xl mx-auto mb-20 reveal-on-scroll">
+        <h2 class="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-3">// CAREER TIMELINE</h2>
+        <h3 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+          Professional Experience & Key Achievements
+        </h3>
+      </div>
+
+      <!-- Timeline Wrapper -->
+      <div class="relative">
+        
+        <!-- Central Line -->
+        <div class="timeline-line"></div>
+
+        <div class="space-y-16">
+          
+          <!-- 1. Riseup Labs -->
+          <div class="relative flex flex-col md:flex-row items-center reveal-on-scroll">
+            <div class="timeline-dot absolute left-7 md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-cyan-400 border-4 border-gray-900 z-20"></div>
+            
+            <div class="w-full md:w-1/2 md:pr-12 md:text-right pl-16 md:pl-0">
+              <span class="inline-block px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 text-xs font-mono mb-3">May 2025 – Present</span>
+              <h4 class="font-heading text-2xl font-bold text-white">Riseup Labs</h4>
+              <p class="text-indigo-400 font-medium text-sm mb-4">Software Engineer</p>
+            </div>
+
+            <div class="w-full md:w-1/2 md:pl-12 pl-16 md:pl-12 mt-4 md:mt-0">
+              <div class="glass-card p-6 rounded-2xl">
+                <h5 class="font-semibold text-white mb-3 text-sm">Key Responsibilities & Highlights:</h5>
+                <ul class="text-gray-300 text-sm space-y-2 mb-4 list-disc list-inside">
+                  <li>Requirement Analysis and overall software architecture design for scalable web systems.</li>
+                  <li>Designing & developing high-throughput REST APIs and microservice communication.</li>
+                  <li>Performance Optimization through Redis Caching and SQL query indexing.</li>
+                  <li>Automated deployment pipeline setup and continuous production monitoring.</li>
+                </ul>
+                <div class="flex flex-wrap gap-2 pt-3 border-t border-gray-800">
+                  <span class="px-2.5 py-1 rounded-lg bg-indigo-900/40 text-indigo-300 text-xs font-mono">QA Brains</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-cyan-900/40 text-cyan-300 text-xs font-mono">WEFI</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-purple-900/40 text-purple-300 text-xs font-mono">Laravel</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-emerald-900/40 text-emerald-300 text-xs font-mono">Redis</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-mono">Docker</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Gain Solutions Ltd -->
+          <div class="relative flex flex-col md:flex-row-reverse items-center reveal-on-scroll">
+            <div class="timeline-dot absolute left-7 md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-indigo-500 border-4 border-gray-900 z-20"></div>
+
+            <div class="w-full md:w-1/2 md:pl-12 md:text-left pl-16 md:pl-12">
+              <span class="inline-block px-3 py-1 rounded-full bg-indigo-950/80 border border-indigo-500/30 text-indigo-300 text-xs font-mono mb-3">Jan 2022 – Apr 2025</span>
+              <h4 class="font-heading text-2xl font-bold text-white">Gain Solutions Ltd</h4>
+              <p class="text-cyan-400 font-medium text-sm mb-4">Full Stack Developer</p>
+            </div>
+
+            <div class="w-full md:w-1/2 md:pr-12 pl-16 md:pl-0 mt-4 md:mt-0">
+              <div class="glass-card p-6 rounded-2xl">
+                <h5 class="font-semibold text-white mb-3 text-sm">Key Responsibilities & Highlights:</h5>
+                <ul class="text-gray-300 text-sm space-y-2 mb-4 list-disc list-inside">
+                  <li>Led full-stack engineering for multi-tenant SaaS products and multi-vendor marketplaces.</li>
+                  <li>Architected seamless Laravel backend services coupled with Next.js frontend interfaces.</li>
+                  <li>Integrated complex Stripe payment gateways, escrow systems, and custom API services.</li>
+                  <li>Managed AWS cloud infrastructure, EC2 instances, S3 buckets, and PostgreSQL databases.</li>
+                </ul>
+                <div class="flex flex-wrap gap-2 pt-3 border-t border-gray-800">
+                  <span class="px-2.5 py-1 rounded-lg bg-indigo-900/40 text-indigo-300 text-xs font-mono">Laravel</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-cyan-900/40 text-cyan-300 text-xs font-mono">Next.js</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-amber-900/40 text-amber-300 text-xs font-mono">AWS</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-purple-900/40 text-purple-300 text-xs font-mono">Stripe</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-emerald-900/40 text-emerald-300 text-xs font-mono">PostgreSQL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Webtech -->
+          <div class="relative flex flex-col md:flex-row items-center reveal-on-scroll">
+            <div class="timeline-dot absolute left-7 md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-purple-500 border-4 border-gray-900 z-20"></div>
+
+            <div class="w-full md:w-1/2 md:pr-12 md:text-right pl-16 md:pl-0">
+              <span class="inline-block px-3 py-1 rounded-full bg-purple-950/80 border border-purple-500/30 text-purple-300 text-xs font-mono mb-3">Jan 2020 – Dec 2021</span>
+              <h4 class="font-heading text-2xl font-bold text-white">Webtech</h4>
+              <p class="text-purple-400 font-medium text-sm mb-4">Software Engineer</p>
+            </div>
+
+            <div class="w-full md:w-1/2 md:pl-12 pl-16 md:pl-12 mt-4 md:mt-0">
+              <div class="glass-card p-6 rounded-2xl">
+                <h5 class="font-semibold text-white mb-3 text-sm">Key Responsibilities & Highlights:</h5>
+                <ul class="text-gray-300 text-sm space-y-2 mb-4 list-disc list-inside">
+                  <li>Developed secure RESTful Web APIs adhering to strict SOLID principles and clean code specs.</li>
+                  <li>Configured database schemas, indexes, and optimized query execution times.</li>
+                  <li>Handled server configuration, security hardening, SSL/TLS, and performance tuning.</li>
+                </ul>
+                <div class="flex flex-wrap gap-2 pt-3 border-t border-gray-800">
+                  <span class="px-2.5 py-1 rounded-lg bg-indigo-900/40 text-indigo-300 text-xs font-mono">REST APIs</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-cyan-900/40 text-cyan-300 text-xs font-mono">MySQL</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-mono">Server Config</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-emerald-900/40 text-emerald-300 text-xs font-mono">Security</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section id="projects" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12 reveal-on-scroll">
+        <h2 class="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-3">// PORTFOLIO WORK</h2>
+        <h3 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+          Featured Engineering Projects
+        </h3>
+      </div>
+
+      <!-- Project Filter Category Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-16 reveal-on-scroll">
+        <button class="project-filter-btn px-5 py-2.5 rounded-xl font-medium text-xs font-mono uppercase tracking-wider transition-all bg-indigo-600 text-white shadow-lg shadow-indigo-600/30" data-filter="all">All Projects</button>
+        <button class="project-filter-btn px-5 py-2.5 rounded-xl font-medium text-xs font-mono uppercase tracking-wider transition-all bg-gray-800/60 text-gray-400 hover:text-white" data-filter="saas">SaaS Platforms</button>
+        <button class="project-filter-btn px-5 py-2.5 rounded-xl font-medium text-xs font-mono uppercase tracking-wider transition-all bg-gray-800/60 text-gray-400 hover:text-white" data-filter="fullstack">Full Stack & APIs</button>
+        <button class="project-filter-btn px-5 py-2.5 rounded-xl font-medium text-xs font-mono uppercase tracking-wider transition-all bg-gray-800/60 text-gray-400 hover:text-white" data-filter="enterprise">Enterprise Suites</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Card 1: QA Brains -->
+        <div class="project-card tilt-card glass-card rounded-2xl overflow-hidden reveal-on-scroll" data-category="saas fullstack">
+          <div class="relative h-56 overflow-hidden bg-gray-900">
+            <img src="assets/images/qa-brains.svg" alt="QA Brains Platform" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-indigo-600/90 text-white text-[11px] font-mono">Riseup Labs</div>
+          </div>
+          <div class="p-6">
+            <h4 class="font-heading text-xl font-bold text-white mb-2">QA Brains</h4>
+            <p class="text-gray-300 text-sm mb-4">AI-assisted QA & automated testing SaaS platform designed for high-concurrency software test suites.</p>
+            <div class="text-xs text-gray-400 space-y-1 mb-6">
+              <p>• Architectural design & high-speed REST API endpoints.</p>
+              <p>• Integrated automated execution queues & Redis caching.</p>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-2 py-1 rounded bg-indigo-950/60 text-indigo-300 text-xs font-mono">Laravel</span>
+              <span class="px-2 py-1 rounded bg-cyan-950/60 text-cyan-300 text-xs font-mono">REST API</span>
+              <span class="px-2 py-1 rounded bg-purple-950/60 text-purple-300 text-xs font-mono">Redis</span>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-gray-800">
+              <a href="#contact" class="text-xs font-mono text-cyan-400 hover:underline flex items-center gap-1">Live Preview →</a>
+              <span class="text-xs font-mono text-gray-500">Enterprise SaaS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: WEFI -->
+        <div class="project-card tilt-card glass-card rounded-2xl overflow-hidden reveal-on-scroll stagger-1" data-category="saas fullstack">
+          <div class="relative h-56 overflow-hidden bg-gray-900">
+            <img src="assets/images/wefi.svg" alt="WEFI Ecosystem" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-indigo-600/90 text-white text-[11px] font-mono">Riseup Labs</div>
+          </div>
+          <div class="p-6">
+            <h4 class="font-heading text-xl font-bold text-white mb-2">WEFI Platform</h4>
+            <p class="text-gray-300 text-sm mb-4">Financial & investment ecosystem handling real estate lease requests, notifications, and landlord portals.</p>
+            <div class="text-xs text-gray-400 space-y-1 mb-6">
+              <p>• Role-based serialization & lease request data flows.</p>
+              <p>• Sub-second response times for property search APIs.</p>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-2 py-1 rounded bg-indigo-950/60 text-indigo-300 text-xs font-mono">Laravel</span>
+              <span class="px-2 py-1 rounded bg-cyan-950/60 text-cyan-300 text-xs font-mono">Next.js</span>
+              <span class="px-2 py-1 rounded bg-emerald-950/60 text-emerald-300 text-xs font-mono">PostgreSQL</span>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-gray-800">
+              <a href="#contact" class="text-xs font-mono text-cyan-400 hover:underline flex items-center gap-1">Live Preview →</a>
+              <span class="text-xs font-mono text-gray-500">Fintech Platform</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Hibox HRM -->
+        <div class="project-card tilt-card glass-card rounded-2xl overflow-hidden reveal-on-scroll stagger-2" data-category="enterprise saas">
+          <div class="relative h-56 overflow-hidden bg-gray-900">
+            <img src="assets/images/hibox-hrm.svg" alt="Hibox HRM Suite" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-purple-600/90 text-white text-[11px] font-mono">Gain Solutions</div>
+          </div>
+          <div class="p-6">
+            <h4 class="font-heading text-xl font-bold text-white mb-2">Hibox HRM</h4>
+            <p class="text-gray-300 text-sm mb-4">Enterprise Human Resource Management suite featuring automated payroll, attendance tracking, and leave management.</p>
+            <div class="text-xs text-gray-400 space-y-1 mb-6">
+              <p>• Automated multi-currency salary & tax calculations.</p>
+              <p>• Role-based permission controls and audit logs.</p>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-2 py-1 rounded bg-indigo-950/60 text-indigo-300 text-xs font-mono">Laravel</span>
+              <span class="px-2 py-1 rounded bg-cyan-950/60 text-cyan-300 text-xs font-mono">Vue.js</span>
+              <span class="px-2 py-1 rounded bg-purple-950/60 text-purple-300 text-xs font-mono">MySQL</span>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-gray-800">
+              <a href="#contact" class="text-xs font-mono text-cyan-400 hover:underline flex items-center gap-1">Live Preview →</a>
+              <span class="text-xs font-mono text-gray-500">Enterprise HR</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Hibox CRM -->
+        <div class="project-card tilt-card glass-card rounded-2xl overflow-hidden reveal-on-scroll stagger-3" data-category="enterprise saas">
+          <div class="relative h-56 overflow-hidden bg-gray-900">
+            <img src="assets/images/hibox-crm.svg" alt="Hibox CRM System" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-purple-600/90 text-white text-[11px] font-mono">Gain Solutions</div>
+          </div>
+          <div class="p-6">
+            <h4 class="font-heading text-xl font-bold text-white mb-2">Hibox CRM</h4>
+            <p class="text-gray-300 text-sm mb-4">Customer Relationship & Sales Pipeline System empowering sales teams with real-time lead analytics and deal stages.</p>
+            <div class="text-xs text-gray-400 space-y-1 mb-6">
+              <p>• Custom Kanban lead boards with drag-and-drop state.</p>
+              <p>• Automated email triggers & Postman API hooks.</p>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-2 py-1 rounded bg-indigo-950/60 text-indigo-300 text-xs font-mono">Laravel</span>
+              <span class="px-2 py-1 rounded bg-cyan-950/60 text-cyan-300 text-xs font-mono">Tailwind</span>
+              <span class="px-2 py-1 rounded bg-amber-950/60 text-amber-300 text-xs font-mono">AWS S3</span>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-gray-800">
+              <a href="#contact" class="text-xs font-mono text-cyan-400 hover:underline flex items-center gap-1">Live Preview →</a>
+              <span class="text-xs font-mono text-gray-500">CRM Platform</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Sources Marketplace -->
+        <div class="project-card tilt-card glass-card rounded-2xl overflow-hidden reveal-on-scroll stagger-4" data-category="fullstack saas">
+          <div class="relative h-56 overflow-hidden bg-gray-900">
+            <img src="assets/images/sources-marketplace.svg" alt="Sources Marketplace" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-amber-600/90 text-white text-[11px] font-mono">Gain Solutions</div>
+          </div>
+          <div class="p-6">
+            <h4 class="font-heading text-xl font-bold text-white mb-2">Sources Marketplace</h4>
+            <p class="text-gray-300 text-sm mb-4">Global B2B E-Commerce & Sourcing Marketplace connecting verified industrial manufacturers and global buyers.</p>
+            <div class="text-xs text-gray-400 space-y-1 mb-6">
+              <p>• Integrated Stripe multi-party payout escrow engine.</p>
+              <p>• High-volume product catalog search using Elasticsearch.</p>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-2 py-1 rounded bg-indigo-950/60 text-indigo-300 text-xs font-mono">Next.js</span>
+              <span class="px-2 py-1 rounded bg-cyan-950/60 text-cyan-300 text-xs font-mono">Stripe API</span>
+              <span class="px-2 py-1 rounded bg-emerald-950/60 text-emerald-300 text-xs font-mono">Docker</span>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-gray-800">
+              <a href="#contact" class="text-xs font-mono text-cyan-400 hover:underline flex items-center gap-1">Live Preview →</a>
+              <span class="text-xs font-mono text-gray-500">B2B E-Commerce</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SKILLS & TECHNICAL PROFICIENCY SECTION -->
+    <section id="skills" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12 reveal-on-scroll">
+        <h2 class="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-3">// TECHNICAL STACK</h2>
+        <h3 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-6">
+          Categorized Engineering Competencies
+        </h3>
+        
+        <!-- Live Skill Search Bar -->
+        <div class="relative max-w-md mx-auto">
+          <input type="text" id="skill-search-input" placeholder="Search skills (e.g. Laravel, Next.js, Redis, Docker)..." class="w-full px-5 py-3.5 rounded-xl bg-gray-900/90 border border-gray-700/80 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all font-mono text-xs">
+          <svg class="w-4 h-4 text-gray-400 absolute right-4 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </div>
+      </div>
+
+      <!-- Skill Categories Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        
+        <!-- Backend Card -->
+        <div class="glass-card p-6 rounded-2xl reveal-on-scroll">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="p-3 rounded-xl bg-indigo-600/20 text-indigo-400 border border-indigo-500/30">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+            <h4 class="font-heading text-xl font-bold text-white">Backend Engineering</h4>
+          </div>
+          <div class="space-y-4">
+            <div class="skill-card flex flex-col gap-1">
+              <div class="flex justify-between text-xs font-mono text-gray-300"><span>Laravel / PHP</span><span>95%</span></div>
+              <div class="h-2 rounded-full bg-gray-800 overflow-hidden"><div class="h-full bg-indigo-500 rounded-full w-[95%]"></div></div>
+            </div>
+            <div class="skill-card flex flex-col gap-1">
+              <div class="flex justify-between text-xs font-mono text-gray-300"><span>RESTful APIs & Microservices</span><span>95%</span></div>
+              <div class="h-2 rounded-full bg-gray-800 overflow-hidden"><div class="h-full bg-cyan-400 rounded-full w-[95%]"></div></div>
+            </div>
+            <div class="skill-card flex flex-col gap-1">
+              <div class="flex justify-between text-xs font-mono text-gray-300"><span>SOLID Architecture</span><span>90%</span></div>
+              <div class="h-2 rounded-full bg-gray-800 overflow-hidden"><div class="h-full bg-purple-500 rounded-full w-[90%]"></div></div>
+            </div>
+            <div class="skill-card flex flex-col gap-1">
+              <div class="flex justify-between text-xs font-mono text-gray-300"><span>Unit Testing (PHPUnit)</span><span>85%</span></div>
+              <div class="h-2 rounded-full bg-gray-800 overflow-hidden"><div class="h-full bg-emerald-400 rounded-full w-[85%]"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Frontend Card -->
+        <div class="glass-card p-6 rounded-2xl reveal-on-scroll stagger-1">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="p-3 rounded-xl bg-cyan-600/20 text-cyan-400 border border-cyan-500/30">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            </div>
+            <h4 class="font-heading text-xl font-bold text-white">Frontend Architecture</h4>
+          </div>
+          <div class="space-y-4">
+            <div class="skill-card flex flex-col gap-1">
+              <div class="flex justify-between text-xs font-mono text-gray-300"><span>Next.js / React</span><span>90%</span></div>
+              <div class="h-2 rounded-full bg-gray-800 overflow-hidden"><div class="h-full bg-cyan-400 rounded-full w-[90%]"></div></div>
+            </div>
+            <div class="skill-card flex flex-col gap-1">
+              <div class="flex justify-between text-xs font-mono text-gray-300"><span>Vue.js</span><span>85%</span></div>
+              <div class="h-2 rounded-full bg-gray-800 overflow-hidden"><div class="h-full bg-emerald-400 rounded-full w-[85%]"></div></div>
+            </div>
+            <div class="skill-card flex flex-col gap-1">
+              <div class="flex justify-between text-xs font-mono text-gray-300"><span>Tailwind CSS</span><span>95%</span></div>
+              <div class="h-2 rounded-full bg-gray-800 overflow-hidden"><div class="h-full bg-indigo-500 rounded-full w-[95%]"></div></div>
+            </div>
+            <div class="skill-card flex flex-col gap-1">
+              <div class="flex justify-between text-xs font-mono text-gray-300"><span>Modern JavaScript (ES6+)</span><span>90%</span></div>
+              <div class="h-2 rounded-full bg-gray-800 overflow-hidden"><div class="h-full bg-amber-400 rounded-full w-[90%]"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Database & Caching Card -->
+        <div class="glass-card p-6 rounded-2xl reveal-on-scroll stagger-2">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="p-3 rounded-xl bg-purple-600/20 text-purple-400 border border-purple-500/30">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 3 3 8 3s8-1 8-3V7M4 7c0 2 3 3 8 3s8-1 8-3M4 7c0-2 3-3 8-3s8 1 8 3"/></svg>
+            </div>
+            <h4 class="font-heading text-xl font-bold text-white">Databases & Caching</h4>
+          </div>
+          <div class="space-y-4">
+            <div class="skill-card flex flex-col gap-1">
+              <div class="flex justify-between text-xs font-mono text-gray-300"><span>MySQL Schema Design</span><span>95%</span></div>
+              <div class="h-2 rounded-full bg-gray-800 overflow-hidden"><div class="h-full bg-indigo-500 rounded-full w-[95%]"></div></div>
+            </div>
+            <div class="skill-card flex flex-col gap-1">
+              <div class="flex justify-between text-xs font-mono text-gray-300"><span>PostgreSQL</span><span>90%</span></div>
+              <div class="h-2 rounded-full bg-gray-800 overflow-hidden"><div class="h-full bg-cyan-400 rounded-full w-[90%]"></div></div>
+            </div>
+            <div class="skill-card flex flex-col gap-1">
+              <div class="flex justify-between text-xs font-mono text-gray-300"><span>Redis In-Memory Caching</span><span>90%</span></div>
+              <div class="h-2 rounded-full bg-gray-800 overflow-hidden"><div class="h-full bg-red-500 rounded-full w-[90%]"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Floating Tech Stack Cloud -->
+      <div class="glass-card p-8 rounded-2xl reveal-on-scroll">
+        <h4 class="font-heading text-lg font-bold text-white mb-6 text-center">Comprehensive Tech Stack Cloud</h4>
+        <div class="flex flex-wrap justify-center gap-3">
+          <span class="tech-pill px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 hover:border-cyan-400 hover:text-cyan-400 transition-all font-mono text-xs flex items-center gap-2">⚡ Laravel</span>
+          <span class="tech-pill px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 hover:border-cyan-400 hover:text-cyan-400 transition-all font-mono text-xs flex items-center gap-2">⚛️ Next.js</span>
+          <span class="tech-pill px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 hover:border-cyan-400 hover:text-cyan-400 transition-all font-mono text-xs flex items-center gap-2">🐳 Docker</span>
+          <span class="tech-pill px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 hover:border-cyan-400 hover:text-cyan-400 transition-all font-mono text-xs flex items-center gap-2">☁️ AWS (EC2/S3/RDS)</span>
+          <span class="tech-pill px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 hover:border-cyan-400 hover:text-cyan-400 transition-all font-mono text-xs flex items-center gap-2">🔴 Redis</span>
+          <span class="tech-pill px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 hover:border-cyan-400 hover:text-cyan-400 transition-all font-mono text-xs flex items-center gap-2">💳 Stripe API</span>
+          <span class="tech-pill px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 hover:border-cyan-400 hover:text-cyan-400 transition-all font-mono text-xs flex items-center gap-2">⚙️ GitHub Actions CI/CD</span>
+          <span class="tech-pill px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 hover:border-cyan-400 hover:text-cyan-400 transition-all font-mono text-xs flex items-center gap-2">📊 PostgreSQL</span>
+          <span class="tech-pill px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 hover:border-cyan-400 hover:text-cyan-400 transition-all font-mono text-xs flex items-center gap-2">🐬 MySQL</span>
+          <span class="tech-pill px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 hover:border-cyan-400 hover:text-cyan-400 transition-all font-mono text-xs flex items-center gap-2">📜 Swagger / OpenAPI</span>
+          <span class="tech-pill px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 hover:border-cyan-400 hover:text-cyan-400 transition-all font-mono text-xs flex items-center gap-2">🚀 Postman</span>
+          <span class="tech-pill px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 hover:border-cyan-400 hover:text-cyan-400 transition-all font-mono text-xs flex items-center gap-2">🎯 Agile / Scrum</span>
+          <span class="tech-pill px-4 py-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-300 hover:border-cyan-400 hover:text-cyan-400 transition-all font-mono text-xs flex items-center gap-2">🖥️ cPanel & VPS</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ACHIEVEMENTS & METRICS SECTION -->
+    <section id="achievements" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="glass-card p-10 sm:p-14 rounded-3xl bg-gradient-to-br from-indigo-950/40 via-gray-900/80 to-cyan-950/40 border border-indigo-500/20 reveal-on-scroll">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-800">
+          
+          <div class="py-4 md:py-0">
+            <span class="counter-val font-heading font-extrabold text-5xl text-white mb-2 block" data-target="5" data-suffix="+">0</span>
+            <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Years Experience</span>
+          </div>
+
+          <div class="py-4 md:py-0">
+            <span class="counter-val font-heading font-extrabold text-5xl text-white mb-2 block" data-target="20" data-suffix="+">0</span>
+            <span class="text-xs font-mono text-indigo-400 uppercase tracking-widest">Projects Shipped</span>
+          </div>
+
+          <div class="py-4 md:py-0">
+            <span class="counter-val font-heading font-extrabold text-5xl text-white mb-2 block" data-target="100" data-suffix="%">0</span>
+            <span class="text-xs font-mono text-purple-400 uppercase tracking-widest">Client Satisfaction</span>
+          </div>
+
+          <div class="py-4 md:py-0">
+            <span class="counter-val font-heading font-extrabold text-5xl text-white mb-2 block" data-target="10" data-suffix="M+">0</span>
+            <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest">API Requests Served</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+        <h2 class="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-3">// GET IN TOUCH</h2>
+        <h3 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+          Let’s Build Something Exceptional
+        </h3>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Contact Info Cards -->
+        <div class="lg:col-span-5 space-y-6 reveal-on-scroll">
+          
+          <div class="glass-card p-6 rounded-2xl flex items-center gap-4">
+            <div class="p-3.5 rounded-xl bg-indigo-600/20 text-indigo-400 border border-indigo-500/30">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <span class="text-xs font-mono text-gray-400 block uppercase">Email</span>
+              <a href="mailto:eshan@example.com" class="text-white font-medium hover:text-cyan-400 transition-colors">eshan@example.com</a>
+            </div>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl flex items-center gap-4">
+            <div class="p-3.5 rounded-xl bg-cyan-600/20 text-cyan-400 border border-cyan-500/30">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <span class="text-xs font-mono text-gray-400 block uppercase">Location</span>
+              <span class="text-white font-medium">Dhaka, Bangladesh / Remote Worldwide</span>
+            </div>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl flex items-center gap-4">
+            <div class="p-3.5 rounded-xl bg-purple-600/20 text-purple-400 border border-purple-500/30">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <div>
+              <span class="text-xs font-mono text-gray-400 block uppercase">Profiles</span>
+              <div class="flex gap-4 mt-1 text-sm font-medium">
+                <a href="https://github.com" target="_blank" class="text-cyan-400 hover:underline">GitHub</a>
+                <a href="https://linkedin.com" target="_blank" class="text-cyan-400 hover:underline">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Interactive Contact Form -->
+        <div class="lg:col-span-7 glass-card p-8 sm:p-10 rounded-2xl reveal-on-scroll stagger-2">
+          <form id="contact-form" class="space-y-6">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-xs font-mono text-gray-300 uppercase mb-2">Your Name</label>
+                <input type="text" id="name" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-gray-900/90 border border-gray-800 text-white placeholder-gray-600 focus:outline-none focus:border-cyan-400 transition-all font-body text-sm">
+              </div>
+              <div>
+                <label for="email" class="block text-xs font-mono text-gray-300 uppercase mb-2">Your Email</label>
+                <input type="email" id="email" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl bg-gray-900/90 border border-gray-800 text-white placeholder-gray-600 focus:outline-none focus:border-cyan-400 transition-all font-body text-sm">
+              </div>
+            </div>
+
+            <div>
+              <label for="message" class="block text-xs font-mono text-gray-300 uppercase mb-2">Your Message</label>
+              <textarea id="message" rows="5" required placeholder="Tell me about your project, timeline, or engineering opportunity..." class="w-full px-4 py-3 rounded-xl bg-gray-900/90 border border-gray-800 text-white placeholder-gray-600 focus:outline-none focus:border-cyan-400 transition-all font-body text-sm"></textarea>
+            </div>
+
+            <button type="submit" id="contact-submit-btn" class="btn-glow w-full flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-700 to-cyan-500 text-white font-semibold text-sm shadow-xl shadow-indigo-600/30 hover:scale-[1.01] transition-all">
+              <span>Send Message</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+
+            <div id="contact-status" class="hidden p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-sm text-center"></div>
+
+          </form>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-800/80 bg-[#02050e] py-12 px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center font-heading font-bold text-white text-sm">E</div>
+        <span class="text-sm font-heading text-gray-300">MD. ESHAN &copy; 2026. All rights reserved.</span>
+      </div>
+
+      <div class="flex items-center gap-6 text-sm text-gray-400">
+        <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+        <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
+        <a href="#experience" class="hover:text-cyan-400 transition-colors">Timeline</a>
+        <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+      </div>
+
+      <!-- Back to Top Button -->
+      <button id="back-to-top" class="opacity-0 pointer-events-none p-3 rounded-xl bg-gray-900 border border-gray-800 text-gray-400 hover:text-cyan-400 hover:border-cyan-400 transition-all" aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+      </button>
+
+    </div>
+  </footer>
+
+  <!-- COMMAND PALETTE MODAL (Ctrl + K) -->
+  <div id="command-palette-modal" class="hidden fixed inset-0 z-[10000] items-center justify-center p-4">
+    <div id="command-palette-backdrop" class="close-cmd-palette fixed inset-0 bg-black/70"></div>
+    
+    <div class="relative w-full max-w-xl bg-[#090d16] border border-gray-800 rounded-2xl shadow-2xl overflow-hidden z-10 flex flex-col max-h-[80vh]">
+      
+      <!-- Input Header -->
+      <div class="flex items-center gap-3 p-4 border-b border-gray-800">
+        <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <input type="text" id="command-palette-input" placeholder="Type a command or search section..." class="w-full bg-transparent text-white placeholder-gray-500 focus:outline-none font-mono text-sm">
+        <button class="close-cmd-palette text-xs font-mono text-gray-500 hover:text-white px-2 py-1 bg-gray-900 rounded">ESC</button>
+      </div>
+
+      <!-- Command Results List -->
+      <div id="command-palette-results" class="p-2 overflow-y-auto space-y-1">
+        <!-- Rendered dynamically via JS -->
+      </div>
+
+      <!-- Footer Info -->
+      <div class="p-3 border-t border-gray-800 text-[11px] font-mono text-gray-500 flex items-center justify-between bg-gray-900/50">
+        <span>Use <kbd class="text-cyan-400">↑↓</kbd> to navigate, <kbd class="text-cyan-400">↵</kbd> to select</span>
+        <span>MD. Eshan Portfolio</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript Controller -->
+  <script src="js/script.js"></script>
+</body>
+</html>
