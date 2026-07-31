@@ -556,6 +556,13 @@ function openResumeModal() {
     modal.classList.remove('hidden');
     modal.classList.add('flex');
     document.body.classList.add('overflow-hidden');
+    
+    // Disable custom cursor to restore native mouse inside iframe
+    document.body.classList.remove('has-custom-cursor');
+    const customCursor = document.getElementById('custom-cursor');
+    if (customCursor) {
+      customCursor.style.display = 'none';
+    }
   }
 }
 
@@ -565,6 +572,13 @@ function closeResumeModal() {
     modal.classList.add('hidden');
     modal.classList.remove('flex');
     document.body.classList.remove('overflow-hidden');
+    
+    // Restore custom cursor if it's a desktop device
+    const customCursor = document.getElementById('custom-cursor');
+    if (customCursor && !window.matchMedia('(pointer: coarse)').matches) {
+      document.body.classList.add('has-custom-cursor');
+      customCursor.style.display = '';
+    }
   }
 }
 
