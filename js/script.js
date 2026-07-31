@@ -164,7 +164,7 @@ function initCommandPalette() {
     { title: 'Check Technical Skills', action: () => scrollToSection('#skills'), icon: 'code' },
     { title: 'View Achievements & Metrics', action: () => scrollToSection('#achievements'), icon: 'award' },
     { title: 'Send a Message / Contact', action: () => scrollToSection('#contact'), icon: 'mail' },
-    { title: 'Download Resume (PDF)', action: () => downloadResume(), icon: 'file' },
+    { title: 'Download Resume (PDF)', action: () => openResumeModal(), icon: 'file' },
     { title: 'Toggle Dark / Light Theme', action: () => document.querySelector('.theme-toggle-btn')?.click(), icon: 'sun' },
     { title: 'Visit GitHub Profile', action: () => window.open('https://github.com', '_blank'), icon: 'github' },
     { title: 'Visit LinkedIn Profile', action: () => window.open('https://linkedin.com', '_blank'), icon: 'linkedin' }
@@ -550,31 +550,64 @@ function initContactForm() {
 /* ----------------------------------------------------
  * 13. RESUME MODAL & DOWNLOAD
  * ---------------------------------------------------- */
+function openResumeModal() {
+  const modal = document.getElementById('resume-modal');
+  if (modal) {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.classList.add('overflow-hidden');
+  }
+}
+
+function closeResumeModal() {
+  const modal = document.getElementById('resume-modal');
+  if (modal) {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.classList.remove('overflow-hidden');
+  }
+}
+
 function initResumeModal() {
   const downloadBtns = document.querySelectorAll('.download-resume-btn');
   downloadBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      downloadResume();
+      openResumeModal();
     });
   });
-}
 
-function downloadResume() {
-  const link = document.createElement('a');
-  link.href = '#';
-  link.setAttribute('download', 'MD_Eshan_Software_Engineer_Resume.pdf');
-  
-  // Trigger user notification modal or toast
-  const toast = document.createElement('div');
-  toast.className = 'fixed bottom-8 right-8 z-50 bg-gray-900 text-white px-6 py-4 rounded-xl border border-indigo-500/50 shadow-2xl flex items-center gap-3 animate-bounce';
-  toast.innerHTML = `
-    <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-    <div>
-      <p class="font-semibold text-sm">Resume Downloading...</p>
-      <p class="text-xs text-gray-400">MD. Eshan - Software Engineer Resume PDF</p>
-    </div>
-  `;
-  document.body.appendChild(toast);
-  setTimeout(() => toast.remove(), 4000);
+  const closeBtns = document.querySelectorAll('.close-resume-modal');
+  closeBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeResumeModal();
+    });
+  });
+
+  // Handle background click on close
+  const modal = document.getElementById('resume-modal');
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target.classList.contains('close-resume-modal')) {
+        closeResumeModal();
+      }
+    });
+  }
+
+  // Handle escape key
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeResumeModal();
+    }
+  });
+
+  // Print button listener
+  const printBtn = document.getElementById('print-resume-btn');
+  if (printBtn) {
+    printBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.open('./cv-html/index.html?print=true', '_blank');
+    });
+  }
 }
