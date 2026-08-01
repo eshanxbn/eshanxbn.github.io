@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://mdeshan.dev/sitemap.xml
