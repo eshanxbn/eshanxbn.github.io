@@ -185,6 +185,9 @@ em {
   margin: 0;
 }
 .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 12.5px;
   padding: 5px 13px;
   border-radius: 999px;
@@ -198,6 +201,15 @@ em {
   border-color: rgba(232, 163, 61, 0.32);
   color: var(--accent-light);
   background: rgba(232, 163, 61, 0.07);
+}
+
+/* Devicon icons inside chips */
+.chip i[class*="devicon-"] {
+  font-size: 1.15em;
+  line-height: 1;
+  flex-shrink: 0;
+  /* colored class applied in HTML gives brand colors;
+     override color only for monochrome contexts */
 }
 
 /* ---------- Header ---------- */
@@ -867,11 +879,21 @@ em {
   color: var(--paper);
   transition: all 0.3s var(--ease);
   cursor: default;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 .core-stack li:hover {
   border-color: rgba(232, 163, 61, 0.55);
   color: var(--accent-light);
   transform: translateY(-3px);
+}
+
+/* Devicon icons inside core-stack */
+.core-stack li i[class*="devicon-"] {
+  font-size: 1.25em;
+  line-height: 1;
+  flex-shrink: 0;
 }
 
 .domain-grid {
