@@ -672,16 +672,16 @@ em {
 
 /* ---------- Sections ---------- */
 
-.section { padding: 92px 0; position: relative; }
-@media (min-width: 768px) { .section { padding: 128px 0; } }
+.section { padding: 48px 0; position: relative; }
+@media (min-width: 768px) { .section { padding: 64px 0; } }
 .section-alt {
   background: var(--ink-2);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
-.section-head { max-width: 720px; margin-bottom: 56px; }
-@media (min-width: 768px) { .section-head { margin-bottom: 72px; } }
+.section-head { max-width: 720px; margin-bottom: 24px; }
+@media (min-width: 768px) { .section-head { margin-bottom: 32px; } }
 .section-title {
   font-size: clamp(2.3rem, 4.6vw, 3.55rem);
   font-weight: 520;
